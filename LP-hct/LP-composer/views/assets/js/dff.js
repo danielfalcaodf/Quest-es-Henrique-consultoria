@@ -21,6 +21,7 @@ function produtoMore() {
         <div class="clear"></div></row > `;
 
   objTo.appendChild(divtest);
+  inputProdutoMask();
 }
 
 function remove_produto(rid) {

@@ -17,11 +17,20 @@
 
 <body>
     <?php require 'navbar.php' ?>
+
+    <div class="ajax_load">
+        <div class="ajax_load_box">
+            <div class="ajax_load_box_circle"></div>
+            <div class="ajax_load_box_title">Aguarde, carrengando...</div>
+        </div>
+    </div>
     <main class="main_content">
         <?= $v->section("content"); ?>
     </main>
     <?php require 'footer.php' ?>
     <script src="<?= asset("jquery/jquery.min.js", "vendor/components"); ?>"></script>
+    <script src="<?= asset("jqueryui/jquery-ui.min.js", "vendor/components"); ?>"></script>
+    <script src="<?= asset("jquery-mask-plugin/dist/jquery.mask.min.js", "vendor/igorescobar"); ?>"></script>
     <script src="<?= asset("bootstrap/dist/js/bootstrap.min.js", "vendor/twbs"); ?>"></script>
     <?= $v->section("scripts"); ?>
 

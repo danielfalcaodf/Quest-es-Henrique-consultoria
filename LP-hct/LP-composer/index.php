@@ -11,7 +11,7 @@ $router->namespace("Source\Controllers");
 //  web 
 $router->group(null);
 $router->get("/", "App:home", "app.home");
-// $router->get("/login", "App:login", "app.login");
+$router->post("/caixa", "Caixa:caixaCalc", "caixa.caixaCalc");
 // $router->get("/cadastrar", "Web:register", "web.register");
 // $router->get("/recuperar", "Web:forget", "web.forget");
 // $router->get("/senha/{email}/{forget}", "Web:reset", "web.reset");

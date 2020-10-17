@@ -1,7 +1,7 @@
 <?php $v->layout("theme/_theme"); ?>
 
 <section>
-    <div class="container my-5 pt-2">
+    <div class="container my-5 py-5 ">
 
         <div class="card">
 
@@ -9,12 +9,12 @@
 
                 <div class="row justify-content-center">
                     <div class="col-md-8">
-                        <form class="form" action="<?= $router->route("auth.login"); ?>" method="post"
+                        <form class="form" action="<?= $router->route("caixa.caixaCalc"); ?>" method="post"
                             autocomplete="off">
                             <!-- <h5 class="font-weight-bold">Valor do Produto</h5> -->
 
 
-                            <div class="login_form_callback">
+                            <div class="form_callback">
                                 <?= flash(); ?>
                             </div>
                             <div class="form-group">
@@ -38,6 +38,27 @@
             </div>
         </div>
 
+        <div class="card my-5  d-none" id="tabelaTroco">
+
+            <div class="card-body">
+                <div class="mb-2" id="result"></div>
+                <table class="table ">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Moeda/Cédula</th>
+                            <th scope="col">Quantidade</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+
 
 
 
@@ -45,4 +66,6 @@
 </section>
 <?php $v->start("scripts"); ?>
 <script src="<?= asset("js/dff.js"); ?>"></script>
+<script src="<?= asset("js/form.js"); ?>"></script>
+<script src="<?= asset("js/scripts.js"); ?>"></script>
 <?php $v->end(); ?>

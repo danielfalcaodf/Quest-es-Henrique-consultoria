@@ -2,6 +2,7 @@
 
 namespace Source\Controllers;
 
+use NumberFormatter;
 use League\Plates\Engine;
 use CoffeeCode\Optimizer\Optimizer;
 use CoffeeCode\Router\Router;
@@ -11,6 +12,7 @@ use CoffeeCode\Router\Router;
  */
 abstract class Controller
 {
+    protected $formatter;
     /** @var Engine */
     protected $view;
     /** @var Router */
@@ -23,6 +25,7 @@ abstract class Controller
      */
     public function __construct($router)
     {
+        $this->formatter = new NumberFormatter('pt_BR',  NumberFormatter::CURRENCY);
         $this->router = $router;
         $this->view = Engine::create(dirname(__DIR__, 2) . "/views", "php");
         $this->view->addData(["router" => $this->router]);
@@ -35,13 +38,50 @@ abstract class Controller
     }
 
     /**
-     * @param string $param
+     * @param array $produtos
+     * 
+     * @return array
+     */
+    public function formtNormal(array $produtos): array
+    {
+        $this->formatter = new NumberFormatter('pt_BR',  NumberFormatter::DECIMAL);
+
+        for ($c = 0; $c < count($produtos); $c++) {
+
+            $produtos[$c] = $this->formatter->parse($produtos[$c]);;
+        }
+
+
+
+        return $produtos;
+    }
+
+    public function formtMoney($value): string
+    {
+
+        $this->formatter = new NumberFormatter('pt_BR',  NumberFormatter::CURRENCY);
+        return $this->formatter->formatCurrency((float) $value, 'BRL');
+    }
+    public function formtMoneyArr($data): array
+    {
+
+        $this->formatter = new NumberFormatter('pt_BR',  NumberFormatter::CURRENCY);
+
+        for ($i = 0; $i < count($data); $i++) {
+            $data[$i] = $this->formatter->formatCurrency((float) $data[$i], 'BRL');
+        }
+        return  $data;
+    }
+
+    /**
      * @param array $values
+     * @param string $status
      * 
      * @return string
      */
-    public function ajaxResponse(string $param, array $values): string
+    public function ajaxResponse(array $values, int $status = 200): string
     {
-        return json_encode([$param => $values]);
+        http_response_code($status);
+        return json_encode($values);
     }
 }
