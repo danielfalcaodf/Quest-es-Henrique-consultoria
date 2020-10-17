@@ -23,6 +23,8 @@
     "ext-json": "*",
     "coffeecode/router": "1.0.7",
     "coffeecode/optimizer": "2.0.0",
-    "league/plates": "v4.0.0-alpha"
+    "league/plates": "v4.0.0-alpha",
+    "components/jquery": "3.5.1",
+    "twbs/bootstrap": "4.5.3"
   }
 }
