@@ -1,13 +1,12 @@
 # System #
 ######################
-/LP-Henrique-consultoria/LP-com-composer/vendor/
 .bash_profile
 .bashrc
 temporary.html
 
 # Composer #
 ######################
-classes/mercadoPago/*
+/LP-hct/LP-composer/vendor/
 
 # Compiled source #
 ###################

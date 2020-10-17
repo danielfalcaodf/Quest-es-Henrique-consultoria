@@ -1,0 +1,33 @@
+{
+  "name": "danielfalcao/teste-pratico-henrique-consultoria",
+  "description": "Processo seletivo para a vaga de Analista de Sistemas na empresa Henrique Consultoria Tributária",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Daniel Falcão M. Silva",
+      "email": "danielfalcao.df@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Source\\": "source"
+    },
+    "files": [
+      "source/Config.php",
+      "source/Helpers.php"
+    ]
+  },
+  "require": {
+    "ext-json": "*",
+    "coffeecode/router": "1.0.7",
+    "coffeecode/optimizer": "2.0.0",
+    "coffeecode/datalayer": "1.1.4",
+    "league/plates": "v4.0.0-alpha",
+    "components/jquery": "3.5.1",
+    "twbs/bootstrap": "4.5.3",
+    "fortawesome/font-awesome": "5.15.1",
+    "matthiasmullie/minify": "1.3.61"
+  }
+}
