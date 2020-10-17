@@ -1,0 +1,119 @@
+<html lang="pt-br">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="plugins/bootstrap-4.2.1-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="plugins/bootstrap-4.2.1-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/ionicons@4.5.0/dist/ionicons.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+    <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+</head>
+
+<body>
+    <div class="header bg-primary">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl">
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="conteudo-header ">
+                                <span class="titulo-Henrique text-center">Henrique Consultoria Tributária </span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="fundo-pai">
+        <div class="fundo-form">
+            <div class="row">
+                <div class="col-xl">
+                    <div class="col-12">
+                        <br>
+                        <label for="valor" class="font-weight-bolder  col-form-label col-form-label-lg">Valor Produto
+                        </label>
+                        <div class="input-group mb-3">
+
+
+                            <input type="text" id="dinheiro" name="dinheiro" placeholder="R$" class="dinheiro form-control" style="display:inline-block"
+                            />
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button" id="addInput">
+                                    <ion-icon name="add"></ion-icon>
+                                </button>
+
+                            </div>
+                        </div>
+                        <form method="GET" action="php/index.php" class="form" method="postdados">
+                            <div class="form-group" id="novoInput">
+
+                            </div>
+                            <button type="button submit" class="button-access btn btn-primary btn-lg btn-block">Calcular</button>
+                        </form>
+                        <br>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    </div>
+
+
+
+</body>
+<script>
+    $('#dinheiro').mask('###0,00', { reverse: true });
+    var dinheiro = $('#dinheiro');
+    var dinheiroDado;
+    dinheiro.focusout(function () {
+        dinheiroDado = dinheiro.val().replace(',', '.');
+    });
+    var Valorpro = $("#Valor");
+    var dado;
+    Valorpro.focusout(function () {
+        dado = Valorpro.val();
+    });
+
+
+    $(function () {
+        var scntDiv = $('#novoInput');
+        $(document).on('click', '#addInput', function () {
+
+            console.log(dinheiroDado);
+            $('<label for="valor" class="col-form-label col-form-label-lg">Valor Produto</label>' +
+                '<div class="input-group mb-3">'
+
+                + ' <input type="text" id="dinheiro" value="' + dinheiroDado.replace('undefined', '') + '"name="produto[]" placeholder="R$" class="dinheiro form-control" style="display:inline-block" />' +
+
+                '</div>'
+
+            ).appendTo(scntDiv);
+            dinheiro.val("");
+            return false;
+        });
+
+    });
+
+</script>
+
+
+
+</html>
