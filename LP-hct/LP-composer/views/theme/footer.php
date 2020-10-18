@@ -1,6 +1,12 @@
-<footer class="  text-white footer bg-primary">
-    <div class="container text-center">
+<section class="bg-primary footer text-center" style="">
 
-        <p>© <?= date('Y') ?> Todos os direitos reservados</p>
+    <div class="row justify-content-center">
+        <div class="col-md-12 text-center align-self-center">
+            <p style="color: white;" class="">
+
+                © <?= date('Y') ?> Todos os direitos reservados
+            </p>
+        </div>
     </div>
-</footer>
+
+</section>

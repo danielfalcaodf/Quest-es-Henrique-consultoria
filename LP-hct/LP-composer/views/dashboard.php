@@ -11,7 +11,7 @@
                     <div class="col-md-8">
                         <form class="form" action="<?= $router->route("caixa.caixaCalc"); ?>" method="post"
                             autocomplete="off">
-                            <!-- <h5 class="font-weight-bold">Valor do Produto</h5> -->
+                            <h5 class="font-weight-bold">Calcular o Troco: </h5>
 
 
                             <div class="form_callback">

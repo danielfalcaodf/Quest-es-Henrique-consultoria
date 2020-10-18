@@ -2,7 +2,7 @@
 
 namespace Source\Controllers;
 
-use Source\Controllers\Controller;
+
 
 class Caixa extends Controller
 {
@@ -21,13 +21,14 @@ class Caixa extends Controller
      */
     public function caixaCalc($data): void
     {
+
+
         $produtos = filter_var_array($data['valorProduto'], FILTER_SANITIZE_STRIPPED);
         // validação 
         if (in_array('', $produtos)) {
             echo $this->ajaxResponse(["message" => ["type" => "error", "message" => "Preeancha todos os campos para fazer calculo dos produtos"]]);
             return;
         }
-
         // fomato dinheiro (string) para decimal com array
         $produtos = $this->formtNormal($produtos);
         // somar os valores do array
@@ -37,6 +38,11 @@ class Caixa extends Controller
         // retorna as notas para troco
         $log = $this->Troco();
         // retorna para ajax via json
+        if (!@$log['result']) {
+            # code...
+            echo $this->ajaxResponse(['message' => ['message' => "Ops erro interno ", 'type' => 'error']], 500);
+            return;
+        }
         echo $this->ajaxResponse(['message' => ['message' => 'Sucesso ao calcular o troco', 'type' => 'success'], 'result' => $log['result'], 'methodType' => $log['methodType'], 'cod' => $log['cod']]);
     }
     /**
@@ -64,9 +70,6 @@ class Caixa extends Controller
 
 
             // encontrar primeira nota do troco
-
-
-
             while ($indice < count($notas) and $this->valorTroco < (float) $notas[$indice]) {
 
 
