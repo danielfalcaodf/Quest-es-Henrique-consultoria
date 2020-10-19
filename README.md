@@ -2,6 +2,44 @@
 
 Como eu ja fiz este mesmo teste, eu fiz umas melhorias deixei duas branches para comparar.
 
+## Layout
+
+#### Desktop
+
+![img-dkt1](https://github.com/danielfalcaodf/TestePratico-Henrique-consultoria/blob/TestePratico-novasMelhorias-10/2020/img/HCT-lp-dtk-1.png?raw=true)
+
+![img-dkt2](https://github.com/danielfalcaodf/TestePratico-Henrique-consultoria/blob/TestePratico-novasMelhorias-10/2020/img/HCT-lp-dtk-2.png?raw=true)
+
+![img-dkt3](https://github.com/danielfalcaodf/TestePratico-Henrique-consultoria/blob/TestePratico-novasMelhorias-10/2020/img/HCT-lp-dtk-3.png?raw=true)
+
+#### Mobile
+
+![img-mb1](https://github.com/danielfalcaodf/TestePratico-Henrique-consultoria/blob/TestePratico-novasMelhorias-10/2020/img/HCT-lp-mb-1.png?raw=true)
+
+![img-mb2](https://github.com/danielfalcaodf/TestePratico-Henrique-consultoria/blob/TestePratico-novasMelhorias-10/2020/img/HCT-lp-mb-2.png?raw=true)
+
+![img-mb3](https://github.com/danielfalcaodf/TestePratico-Henrique-consultoria/blob/TestePratico-novasMelhorias-10/2020/img/HCT-lp-mb-3.png?raw=true)
+
+## Ferramentas
+
+#### composer.json
+
+```json
+  "require": {
+    "ext-json": "*",
+    "coffeecode/router": "1.0.7",
+    "coffeecode/optimizer": "2.0.0",
+    "coffeecode/datalayer": "1.1.4",
+    "league/plates": "v4.0.0-alpha",
+    "components/jquery": "3.5.1",
+    "components/jqueryui": "1.12.1",
+    "igorescobar/jquery-mask-plugin": "v1.14.1",
+    "twbs/bootstrap": "4.5.3",
+    "fortawesome/font-awesome": "5.15.1",
+    "matthiasmullie/minify": "1.3.61"
+  }
+```
+
 ## Resolução do problema - LP
 
 #### Caixa.php
