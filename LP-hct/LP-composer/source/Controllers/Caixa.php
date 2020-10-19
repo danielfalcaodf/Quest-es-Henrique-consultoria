@@ -86,11 +86,10 @@ class Caixa extends Controller
             }
 
 
-
             // fazer o arredondar do centavos restantes 
-            if ($this->valorTroco >= 0.03 && $this->valorTroco < 0.05) {
+            if (number_format($this->valorTroco, 2) >= 0.03 && number_format($this->valorTroco, 2) < 0.05) {
                 $this->valorTroco = 0.05;
-            } else if ($this->valorTroco >= 0.01 && $this->valorTroco <= 0.02 && $this->valorTroco < 0.03 || $this->valorTroco < 0.01) {
+            } else if (number_format($this->valorTroco, 2) >= 0.01 && number_format($this->valorTroco, 2) <= 0.02 && number_format($this->valorTroco, 2) < 0.03 || number_format($this->valorTroco, 2) < 0.01) {
                 $this->valorTroco = 0;
             }
         }
